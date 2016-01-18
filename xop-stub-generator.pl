@@ -281,8 +281,18 @@ sub convertParameterTypeForResourceFile{
 
 	$types{"variable"} = "NT_FP64";
 	$types{"string"}   = "HSTRING_TYPE";
+	$types{"WAVE"} = "WAVE_TYPE";
 	$types{"TEXTWAVE"} = "WAVE_TYPE";
 	$types{"FP64WAVE"} = "WAVE_TYPE";
+	$types{"FP32WAVE"} = "WAVE_TYPE";
+	$types{"INT8WAVE"} = "WAVE_TYPE";
+	$types{"INT16WAVE"} = "WAVE_TYPE";
+	$types{"INT32WAVE"} = "WAVE_TYPE";
+	$types{"INT64WAVE"} = "WAVE_TYPE";
+	$types{"UINT8WAVE"} = "WAVE_TYPE";
+	$types{"UINT16WAVE"} = "WAVE_TYPE";
+	$types{"UINT32WAVE"} = "WAVE_TYPE";
+	$types{"UINT64WAVE"} = "WAVE_TYPE";
 
 	if( $type =~ m/struct/){
 		$resourceType =  "FV_REF_TYPE | FV_STRUCT_TYPE";
@@ -306,8 +316,18 @@ sub convertParameterTypeForCPPFile{
 
 	$types{"variable"} = "double";
 	$types{"string"}   = "Handle";
+	$types{"WAVE"} = "waveHndl";
 	$types{"TEXTWAVE"} = "waveHndl";
 	$types{"FP64WAVE"} = "waveHndl";
+	$types{"FP32WAVE"} = "waveHndl";
+	$types{"INT8WAVE"} = "waveHndl";
+	$types{"INT16WAVE"} = "waveHndl";
+	$types{"INT32WAVE"} = "waveHndl";
+	$types{"INT64WAVE"} = "waveHndl";
+	$types{"UINT8WAVE"} = "waveHndl";
+	$types{"UINT16WAVE"} = "waveHndl";
+	$types{"UINT32WAVE"} = "waveHndl";
+	$types{"UINT64WAVE"} = "waveHndl";
 
 	if( $type =~ m/struct/){
 		$CType =  $type
