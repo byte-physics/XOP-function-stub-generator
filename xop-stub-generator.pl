@@ -130,7 +130,7 @@ while($line = <IN>){
 		# Trim whitespace from the front and end of the name
 		$funcName =~ s/^\s+|\s+$//g;
 
-		# C standard only allows 31 chars as maximum function name length
+		# Igor Pro only allows 31 chars as maximum function name length
 		if(length($funcName) > 31){
 			print "The functions name $funcName is too long. Only 31 chars are allowed.";
 			return 0;
