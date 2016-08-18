@@ -3,7 +3,7 @@
 # Version: 0.12
 # Date: 4/20/2011
 #
-# Requirement: A recent Perl version, ctags from http://ctags.sourceforge.net, ctags must be in $PATH
+# Requirement: A recent Perl version, utags from https://github.com/universal-ctags/ctags, ctags must be in $PATH
 # Purpose: From a specially crafted C header file, this script can generate all necessary (resource file, header, and function) stubs for creating a XOP for Igor Pro(tm).
 # Note: Check carefully the output of this program. It is used as at the tool for the tool only ;)
 #
@@ -24,7 +24,7 @@ if($argc < 1){
 	exit 1;
 }
 
-system("ctags","--totals=yes", "--c-kinds=+px-t",$ARGV[0] );
+system("ctags.exe", "--pattern-length-limit=0", "--totals=yes",  "--language-force=C", "--c-kinds=+px-t", $ARGV[0]);
 
 open(IN,"<tags") or die "can not open file ctags";
 
