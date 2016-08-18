@@ -1,7 +1,7 @@
 # Author: Thomas Braun, thomas (dot) braun (at) virtuell-zuhause (dot) de
 # License: GPLv3 or later
-# Version: 0.12
-# Date: 4/20/2011
+# Version: 0.13
+# Date: 8/18/2016
 #
 # Requirement: A recent Perl version, utags from https://github.com/universal-ctags/ctags, ctags must be in $PATH
 # Purpose: From a specially crafted C header file, this script can generate all necessary (resource file, header, and function) stubs for creating a XOP for Igor Pro(tm).
