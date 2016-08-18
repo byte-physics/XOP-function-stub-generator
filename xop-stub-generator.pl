@@ -10,7 +10,6 @@
 
 use strict;
 use warnings;
-use diagnostics;
 
 my $argc = @ARGV;          # get the number of arguments
 
