@@ -4,9 +4,13 @@
 # Date: 8/18/2016
 #
 # Requirement: A recent Perl version, utags from https://github.com/universal-ctags/ctags, ctags must be in $PATH
-# Purpose: From a specially crafted C header file, this script can generate all necessary (resource file, header, and function) stubs for creating a XOP for Igor Pro(tm).
-# Note: Check carefully the output of this program. It is used as at the tool for the tool only ;)
 #
+# Purpose: From a specially crafted C header file, this script can generate all
+# necessary (resource file, header, and function) stubs for creating a XOP for
+# Igor Pro(tm).
+#
+# Note: Check carefully the output of this program. It is used as at the tool
+# for the tool only ;)
 
 use strict;
 use warnings;
