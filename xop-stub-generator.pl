@@ -1,7 +1,7 @@
-# Author: Thomas Braun, thomas (dot) braun (at) virtuell-zuhause (dot) de
-# License: GPLv3 or later
-# Version: 0.13
-# Date: 8/18/2016
+# Copyright: Thomas Braun, support (at) byte (minus) physics (dot) de
+# License: 3-clause BSD, see https://opensource.org/licenses/BSD-3-Clause
+# Version: 0.15
+# Date: 4/7/2017
 #
 # Requirement: A recent Perl version, utags from https://github.com/universal-ctags/ctags, ctags must be in $PATH
 #
