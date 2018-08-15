@@ -1,3 +1,4 @@
+#!/usr/bin/env perl
 # Copyright: Thomas Braun, support (at) byte (minus) physics (dot) de
 # License: 3-clause BSD, see https://opensource.org/licenses/BSD-3-Clause
 # Version: 0.15
