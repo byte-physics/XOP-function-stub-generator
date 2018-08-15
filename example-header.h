@@ -1,8 +1,6 @@
 /*
- * Author:  Thomas Braun, thomas dot braun aeht virtuell minus zuhause dot de
- * License: GPLv3 or later
- * Version: 0.12
- * Date: 4/20/2011
+ * Copyright: Thomas Braun, support (at) byte (minus) physics (dot) de
+ * License: 3-clause BSD, see https://opensource.org/licenses/BSD-3-Clause
  *
  * Purpose: Example file for xop-stub-generator.pl
 */
