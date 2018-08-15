@@ -62,7 +62,7 @@ our $resourceFileFunctionDefinitionWin= <<EOF;
   "%%funcName%%\\0",
   F_UTIL | F_EXTERNAL%%ADDFUNCCAT%%,    // Function category
   %%returnType%%,          // Return value type
-  %%parameterLine%%
+%%parameterLine%%
   0,
 EOF
 
@@ -73,11 +73,11 @@ our $resourceFileFunctionDefinitionMac = <<EOF;
   F_UTIL | F_EXTERNAL%%ADDFUNCCAT%%,    // Function category
   %%returnType%%,          // Return value type
   {
-    %%parameterLine%%
+%%parameterLine%%
   },
 EOF
 
-our $resourceFileParameterLine = "  %%argType%%,      // parameter %%argNumber%%";
+our $resourceFileParameterLine = "%%argType%%,      // parameter %%argNumber%%";
 
 our $registerFunctionTemplate= <<EOF;
 #include "XOPStandardHeaders.h" // Include ANSI headers, Mac headers, IgorXOP.h, XOP.h and XOPSupport.h
@@ -150,6 +150,7 @@ $funcIndex=0;
 $allCaseLines="";
 $allStructs="";
 $allDeclLines="";
+$argNumber=0;
 
 while($line = <$in>){
 
@@ -249,7 +250,14 @@ while($line = <$in>){
     $functionsWin = $resourceFileFunctionDefinitionWin;
     $functionsWin =~ s/%%funcSig%%/$funcSig/g;
     $functionsWin =~ s/%%funcName%%/$funcName/g;
-    $functionsWin =~ s/%%parameterLine%%/$allParameters/g;
+    if($argNumber > 0)
+    {
+      $functionsWin =~ s/%%parameterLine%%/$allParameters/g;
+    }
+    else
+    {
+      $functionsWin =~ s/%%parameterLine%%\n//g;
+    }
     $functionsWin =~ s/%%returnType%%/$resourceReturnType/g;
     if($functionIsThreadSafe){
       $functionsWin =~ s/%%ADDFUNCCAT%%/ | F_THREADSAFE/g;
@@ -264,7 +272,14 @@ while($line = <$in>){
     $functionsMac = $resourceFileFunctionDefinitionMac;
     $functionsMac =~ s/%%funcSig%%/$funcSig/g;
     $functionsMac =~ s/%%funcName%%/$funcName/g;
-    $functionsMac =~ s/%%parameterLine%%/$allParameters/g;
+    if($argNumber > 0)
+    {
+      $functionsMac =~ s/%%parameterLine%%/$allParameters/g;
+    }
+    else
+    {
+      $functionsMac =~ s/%%parameterLine%%\n//g;
+    }
     $functionsMac =~ s/%%returnType%%/$resourceReturnType/g;
     if($functionIsThreadSafe){
       $functionsMac =~ s/%%ADDFUNCCAT%%/ | F_THREADSAFE/g;
