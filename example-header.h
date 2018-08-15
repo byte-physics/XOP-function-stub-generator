@@ -10,3 +10,4 @@
 variable openFile(string absoluteFilePath, string fileName);
 string getBugReportTemplate();
 THREADSAFE variable getFileName(string *filename);
+string getValues(struct myStruct* s);
