@@ -22,14 +22,23 @@ my ($functionIsThreadSafe,$line,@array,$funcSig, $returnType,@argsName,@argsType
 my ($resourceParamType,$resourceReturnType,$allParameters,$functionsWin,$functionsMac,$parameter,$allFunctionsWin,$allFunctionsMac,$argNumber,$funcIndex,$allCaseLines);
 my ($registerFunctionBodyContent,$caseLine,$allCppParameters, $cppParamType,$functionSkeleton,$allFunctionSkeletons);
 my ($cppResultType,$allStructs,$allDeclLines,$declLine,$hfileSkeleton);
-my ($in, $out);
+my ($in, $out, $ctags);
 
 if($argc < 1){
   print "Too less arguments";
   exit 1;
 }
 
-system("ctags", "--pattern-length-limit=0", "--totals=yes",  "--language-force=C", "--c-kinds=p", $ARGV[0]);
+if ($^O eq "darwin")
+{
+  $ctags = "/usr/local/bin/ctags";
+}
+else
+{
+  $ctags = "ctags"
+}
+
+system($ctags, "--pattern-length-limit=0", "--totals=yes",  "--language-force=C", "--c-kinds=p", $ARGV[0]);
 
 open $in, "<", "tags" or die "can not open file ctags";
 
