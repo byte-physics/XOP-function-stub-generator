@@ -112,7 +112,7 @@ EOF
 
 our $registerFunctionCaseTemplate = <<EOF;
   case %%funcIndex%%:
-    returnValue = (XOPIORecResult) %%funcName%%;
+    returnValue = reinterpret_cast<XOPIORecResult>(%%funcName%%);
     break;
 EOF
 
