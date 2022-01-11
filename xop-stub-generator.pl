@@ -121,6 +121,13 @@ our $hfileHeader = <<EOF;
 #include "XOPStandardHeaders.h" // Include ANSI headers, Mac headers, IgorXOP.h, XOP.h and XOPSupport.h
 
 XOPIORecResult RegisterFunction();
+
+#pragma pack(2)		// All structures passed to Igor are two-byte aligned.
+struct DPComplexNum {
+	double real;
+	double imag;
+};
+#pragma pack()		// Reset structure alignment to default.
 EOF
 
 our $hfileFunctionTemplate = <<EOF;
@@ -384,6 +391,7 @@ sub convertParameterTypeForResourceFile{
   my (%types, $resourceType);
 
   $types{"variable"} = "NT_FP64";
+  $types{"complex"} = "NT_FP64 | NT_CMPLX";
   $types{"string"}   = "HSTRING_TYPE";
   $types{"WAVE"} = "WAVE_TYPE";
   $types{"TEXTWAVE"} = "WAVE_TYPE";
@@ -418,6 +426,7 @@ sub convertParameterTypeForCPPFile{
 
   my (%types, $CType);
 
+  $types{"complex"} = "struct DPComplexNum";
   $types{"variable"} = "double";
   $types{"string"}   = "Handle";
   $types{"WAVE"} = "waveHndl";
