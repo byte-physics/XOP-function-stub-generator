@@ -38,7 +38,7 @@ else
   $ctags = "ctags"
 }
 
-system($ctags, "--pattern-length-limit=0", "--totals=yes",  "--language-force=C", "--c-kinds=p", $ARGV[0]);
+system($ctags, "--options=NONE", "--pattern-length-limit=0", "--totals=yes",  "--language-force=C", "--c-kinds=p", $ARGV[0]);
 
 open $in, "<", "tags" or die "can not open file ctags";
 
