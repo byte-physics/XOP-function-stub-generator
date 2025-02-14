@@ -393,7 +393,9 @@ sub convertParameterTypeForResourceFile{
   $types{"variable"} = "NT_FP64";
   $types{"complex"} = "NT_FP64 | NT_CMPLX";
   $types{"string"}   = "HSTRING_TYPE";
+  $types{"DFREF"} = "DATAFOLDER_TYPE";
   $types{"WAVE"} = "WAVE_TYPE";
+  $types{"WAVEWAVE"} = "WAVE_TYPE";
   $types{"TEXTWAVE"} = "WAVE_TYPE";
   $types{"FP64WAVE"} = "WAVE_TYPE";
   $types{"FP32WAVE"} = "WAVE_TYPE";
@@ -429,7 +431,9 @@ sub convertParameterTypeForCPPFile{
   $types{"complex"} = "struct DPComplexNum";
   $types{"variable"} = "double";
   $types{"string"}   = "Handle";
+  $types{"DFREF"} = "DataFolderHandle";
   $types{"WAVE"} = "waveHndl";
+  $types{"WAVEWAVE"} = "waveHndl";
   $types{"TEXTWAVE"} = "waveHndl";
   $types{"FP64WAVE"} = "waveHndl";
   $types{"FP32WAVE"} = "waveHndl";
